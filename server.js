@@ -6,7 +6,6 @@ const dbconnection = mysql.createConnection('mysql://root:rootroot@localhost:330
 // Check if database is connected //
 // dbconnection.connect(() => console.log('connected!'))
 
-
 dbconnection.query("SELECT * from role", function (error, res) {
   showRoles = res.map(role => ({ name: role.title, value: role.id }))
 })
@@ -14,7 +13,6 @@ dbconnection.query("SELECT * from department", function (error, res) {
   showDepartments = res.map(dep => ({ name: dep.name, value: dep.id }))
 })
 dbconnection.query("SELECT * from employee", function (error, res) {
-  // console.log(error, res);
   showEmployees = res.map(emp => ({ name: `${emp.first_name} ${emp.last_name}`, value: emp.id }))
 })
 
@@ -214,22 +212,23 @@ function updateEmployeeRole() {
     inquirer.prompt([
       {
         type: 'list',
-        name: 'first_name',       
+        name: 'firstname',       
         message: "Select employee:",
         choices: showEmployees
       },
       {
         type: 'list',
-        name: 'role_id',    
+        name: 'id',    
         message: "Select new role:",
         choices: showRoles
       }
     ])
       .then(updateEmployee => {
-        dbconnection.query('UPDATE employee.first_name, employee.last_name, role.title FROM employee SET ? WHERE ?', [{ role_id: updateEmployee.role_id }, { first_name: updateEmployee.first_name }], () => {
+        dbconnection.query('UPDATE employee SET ? WHERE ?',
+        [{role_id: updateEmployee.id }, {first_name: updateEmployee.firstname}],
+        () => {
           if (err) { console.log(err) }
-          console.table(employees)
-          console.log('Success! Employee Role Updated.')
+          console.log(`Success! Employee Role Updated.`)
           main()
         })
       })
@@ -241,5 +240,3 @@ function end() {
   dbconnection.end();
   process.exit();
 }
-
-
