@@ -14,7 +14,11 @@
 ## Description
 The Employee Tracker project allows a business owner to view and manage there employees by their name, role, salary and department in the company. 
 
+<<<<<<< HEAD
 Walkthrough Video: [Screencastify](https://github.com/jazminejose/employeeTracker.git
+=======
+Walkthrough Video: [Screencastify](https://drive.google.com/file/d/1kCExK4CvNtnZCUoTiZ8kgS-WmXwZ1yz3/view
+>>>>>>> 2f446dc56cd84286040a58598643597c027405f4
 )
 ## Installation
 [Node](https://nodejs.org/en/download/)<br>
