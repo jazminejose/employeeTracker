@@ -1,4 +1,4 @@
-# Team Profile 
+# Employee Tracker 
   ![Badge for GitHub commit activity](https://img.shields.io/github/commit-activity/w/jazminejose/employeeTracker?style=for-the-badge)
 
 ## Table of Content(s)
@@ -14,7 +14,7 @@
 ## Description
 The Employee Tracker project allows a business owner to view and manage there employees by their name, role, salary and department in the company. 
 
-Walkthrough Video: [Screencastify](https://user-images.githubusercontent.com/92974218/147193422-0cfc4d1f-8b5b-4a66-af65-06a099380be7.mp4
+Walkthrough Video: [Screencastify](https://drive.google.com/file/d/1kCExK4CvNtnZCUoTiZ8kgS-WmXwZ1yz3/view
 )
 ## Installation
 [Node](https://nodejs.org/en/download/)
